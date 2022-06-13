@@ -47,6 +47,11 @@ Run:
 $ composer run-script tests
 ```
 
+Or: 
+```
+$ vendor/bin/phpunit
+```
+
 ## License 
 
 `screenshotone/phpsdk` is released under [the MIT license](LICENSE).
