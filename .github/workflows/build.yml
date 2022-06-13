@@ -13,4 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2      
       - uses: php-actions/composer@v6
+      - uses: php-actions/phpstan@v3
+        with:
+          path: src/
       - uses: php-actions/phpunit@v9
