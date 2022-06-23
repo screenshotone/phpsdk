@@ -50,7 +50,7 @@ class TakeOptions
     }
 
     /**
-     * ErrorOnSelectorNotFound determines the behavior of what to do when selector is not found.
+     * errorOnSelectorNotFound determines the behavior of what to do when selector is not found.
      */
     public function errorOnSelectorNotFound(bool $errorOn) {
         $this->put("error_on_selector_not_found", $errorOn ? "true" : "false");
