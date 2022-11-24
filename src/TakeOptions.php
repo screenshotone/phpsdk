@@ -51,14 +51,13 @@ class TakeOptions
     
     
     /**
-     * The hide_selectors option allows hiding elements before taking a screenshot.
-     * All elements that match each selector will be hidden by setting the display style property to none !important.
+     * hideSelectors method allows hiding elements before taking a screenshot.
+     * 
+     * All elements that match each selector will be hidden by setting the `display` style 
+     * property to `none !important`.
      */
-    public function hideSelectors(string ...$selectors)
-    {
-        foreach( $selectors as $selector ) {
-            $this->put('hide_selectors', $selector);
-        }
+    public function hideSelectors(string ...$selectors) {
+        $this->put("hide_selectors", ...$selectors);
 
         return $this;
     }
