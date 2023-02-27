@@ -20,6 +20,9 @@ Generate a screenshot URL without executing the request. Or download the screens
 ```php
 <?php 
 
+// If you don't use Composer in your project, please, read https://getcomposer.org/doc/01-basic-usage.md#autoloading. 
+// You need the Composer autoloader to use the API SDK.
+
 // ...
 
 use ScreenshotOne\Sdk\Client;
