@@ -339,6 +339,16 @@ class TakeOptions
     }
 
     /**
+     * Ignore errors returned by the site and render the error page.
+     */
+    public function ignoreHostErrors(bool $ignoreHostErrors)
+    {
+        $this->put("ignore_host_errors", $ignoreHostErrors ? "true" : "false");
+
+        return $this;
+    }
+
+    /**
      * Returns array that might be used to build a query string.
      */
     public function query(): array
