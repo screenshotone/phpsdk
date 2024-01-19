@@ -48,15 +48,16 @@ class TakeOptions
 
         return $this;
     }
-    
-    
+
+
     /**
      * hideSelectors method allows hiding elements before taking a screenshot.
      * 
      * All elements that match each selector will be hidden by setting the `display` style 
      * property to `none !important`.
      */
-    public function hideSelectors(string ...$selectors) {
+    public function hideSelectors(string ...$selectors)
+    {
         $this->put("hide_selectors", ...$selectors);
 
         return $this;
@@ -65,7 +66,8 @@ class TakeOptions
     /**
      * errorOnSelectorNotFound determines the behavior of what to do when selector is not found.
      */
-    public function errorOnSelectorNotFound(bool $errorOn) {
+    public function errorOnSelectorNotFound(bool $errorOn)
+    {
         $this->put("error_on_selector_not_found", $errorOn ? "true" : "false");
 
         return $this;
@@ -334,6 +336,21 @@ class TakeOptions
     public function timeout(int $timeout)
     {
         $this->put("timeout", (string) $timeout);
+
+        return $this;
+    }
+
+    /**
+     * When the site responds within the range of 200-299 status code, 
+     * you can ignore errors and take a screenshot of the error page anyway. 
+     * To do that, set the option `ignore_host_errors` to true. It is false by default.
+     * 
+     * It is helpful when you want to create a gallery of error pages or, 
+     * for some reason, you need to render error pages.
+     */
+    public function ignoreHostErrors(bool $ignoreHostErrors)
+    {
+        $this->put("ignore_host_errors", $ignoreHostErrors ? "true" : "false");
 
         return $this;
     }
