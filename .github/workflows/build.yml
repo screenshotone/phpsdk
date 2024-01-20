@@ -16,4 +16,4 @@ jobs:
       - uses: php-actions/phpstan@v3
         with:
           path: src/
-      - uses: php-actions/phpunit@v9
+      - uses: php-actions/phpunit@v3
