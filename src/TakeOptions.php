@@ -74,6 +74,16 @@ class TakeOptions
     }
 
     /**
+     * You can use data center proxies provided by ScreenshotOne to take screenshots from different countries. 
+     */
+    public function ipCountryCode(string $ipCountryCode)
+    {
+        $this->put("ip_country_code", $ipCountryCode);
+
+        return $this;
+    }
+
+    /**
      * Styles specifies custom CSS styles for the page.
      */
     public function styles(string $styles)
