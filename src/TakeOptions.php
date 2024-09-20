@@ -216,7 +216,7 @@ class TakeOptions
     }
 
     /**
-     * Blocks cookie banner
+     * Blocks cookie banners
      */
     public function blockCookieBanners(bool $blockCookieBanners )
     {
