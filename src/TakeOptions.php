@@ -216,6 +216,15 @@ class TakeOptions
     }
 
     /**
+     * Blocks cookie banner
+     */
+    public function blockCookieBanners(bool $blockCookieBanners )
+    {
+        $this->put("block_cookie_banners", $blockCookieBanners ? "true" : "false");
+        return $this;
+    }
+
+    /**
      * Blocks trackers.
      */
     public function blockTrackers(bool $blockTrackers)
