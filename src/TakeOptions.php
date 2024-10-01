@@ -145,6 +145,19 @@ class TakeOptions
     }
 
     /**
+     * Sets clipping options to screenshot just a portion of the page (pixels).
+     */
+    public function clip(int $x, int $y, int $width, int $height)
+    {
+        $this->put("clip_x", (string) $x);
+        $this->put("clip_y", (string) $y);
+        $this->put("clip_width", (string) $width);
+        $this->put("clip_height", (string) $height);
+
+        return $this;
+    }
+
+    /**
      * Sets the width of the browser viewport (pixels).
      */
     public function viewportWidth(int $viewportWidth)
