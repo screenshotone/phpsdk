@@ -28,7 +28,7 @@ Generate a screenshot URL without executing the request. Or download the screens
 use ScreenshotOne\Sdk\Client;
 use ScreenshotOne\Sdk\TakeOptions;
 
-$client = new Client('your access key', 'your secret key');
+$client = new Client('<your access key>', '<your secret key>');
 
 $options = TakeOptions::url("https://example.com")
     ->fullPage(true)
