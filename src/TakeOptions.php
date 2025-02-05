@@ -218,7 +218,7 @@ class TakeOptions
     /**
      * Blocks cookie banners.
      */
-    public function blockCookieBanners(bool $blockCookieBanners )
+    public function blockCookieBanners(bool $blockCookieBanners)
     {
         $this->put("block_cookie_banners", $blockCookieBanners ? "true" : "false");
         return $this;
@@ -370,6 +370,479 @@ class TakeOptions
     public function ignoreHostErrors(bool $ignoreHostErrors)
     {
         $this->put("ignore_host_errors", $ignoreHostErrors ? "true" : "false");
+
+        return $this;
+    }
+
+    /**
+     * Enables scrolling element into view before taking a screenshot.
+     */
+    public function selectorScrollIntoView(bool $scroll)
+    {
+        $this->put("selector_scroll_into_view", $scroll ? "true" : "false");
+
+        return $this;
+    }
+
+    /**
+     * Enables capturing content beyond viewport.
+     */
+    public function captureBeyondViewport(bool $capture)
+    {
+        $this->put("capture_beyond_viewport", $capture ? "true" : "false");
+
+        return $this;
+    }
+
+    /**
+     * Scrolls element into view before taking a screenshot.
+     */
+    public function scrollIntoView(string $selector)
+    {
+        $this->put("scroll_into_view", $selector);
+
+        return $this;
+    }
+
+    /**
+     * Adjusts scroll position by pixels.
+     */
+    public function scrollIntoViewAdjustTop(int $pixels)
+    {
+        $this->put("scroll_into_view_adjust_top", (string) $pixels);
+
+        return $this;
+    }
+
+    /**
+     * Requests GPU rendering.
+     */
+    public function requestGpuRendering(bool $request)
+    {
+        $this->put("request_gpu_rendering", $request ? "true" : "false");
+
+        return $this;
+    }
+
+    /**
+     * Sets PDF print background.
+     */
+    public function pdfPrintBackground(bool $print)
+    {
+        $this->put("pdf_print_background", $print ? "true" : "false");
+
+        return $this;
+    }
+
+    /**
+     * Fits PDF to one page.
+     */
+    public function pdfFitOnePage(bool $fit)
+    {
+        $this->put("pdf_fit_one_page", $fit ? "true" : "false");
+
+        return $this;
+    }
+
+    /**
+     * Sets PDF orientation to landscape.
+     */
+    public function pdfLandscape(bool $landscape)
+    {
+        $this->put("pdf_landscape", $landscape ? "true" : "false");
+
+        return $this;
+    }
+
+    /**
+     * Sets PDF paper format.
+     */
+    public function pdfPaperFormat(string $format)
+    {
+        $this->put("pdf_paper_format", $format);
+
+        return $this;
+    }
+
+    /**
+     * Sets OpenAI API key for vision integration.
+     */
+    public function openaiApiKey(string $key)
+    {
+        $this->put("openai_api_key", $key);
+
+        return $this;
+    }
+
+    /**
+     * Sets vision prompt for OpenAI integration.
+     */
+    public function visionPrompt(string $prompt)
+    {
+        $this->put("vision_prompt", $prompt);
+
+        return $this;
+    }
+
+    /**
+     * Sets maximum tokens for OpenAI vision response.
+     */
+    public function visionMaxTokens(int $tokens)
+    {
+        $this->put("vision_max_tokens", (string) $tokens);
+
+        return $this;
+    }
+
+    /**
+     * Sets clip coordinates and dimensions.
+     */
+    public function clip(int $x, int $y, int $width, int $height)
+    {
+        $this->put("clip_x", (string) $x);
+        $this->put("clip_y", (string) $y);
+        $this->put("clip_width", (string) $width);
+        $this->put("clip_height", (string) $height);
+
+        return $this;
+    }
+
+    /**
+     * Sets full page scroll parameters.
+     */
+    public function fullPageScroll(bool $scroll, int $delay = null, int $scrollBy = null)
+    {
+        $this->put("full_page_scroll", $scroll ? "true" : "false");
+        if ($delay !== null) {
+            $this->put("full_page_scroll_delay", (string) $delay);
+        }
+        if ($scrollBy !== null) {
+            $this->put("full_page_scroll_by", (string) $scrollBy);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Sets maximum height for full page screenshot.
+     */
+    public function fullPageMaxHeight(int $height)
+    {
+        $this->put("full_page_max_height", (string) $height);
+
+        return $this;
+    }
+
+    /**
+     * Sets full page algorithm.
+     */
+    public function fullPageAlgorithm(string $algorithm)
+    {
+        $this->put("full_page_algorithm", $algorithm);
+
+        return $this;
+    }
+
+    /**
+     * Sets viewport device preset.
+     */
+    public function viewportDevice(string $device)
+    {
+        $this->put("viewport_device", $device);
+
+        return $this;
+    }
+
+    /**
+     * Sets viewport mobile mode.
+     */
+    public function viewportMobile(bool $mobile)
+    {
+        $this->put("viewport_mobile", $mobile ? "true" : "false");
+
+        return $this;
+    }
+
+    /**
+     * Sets viewport touch support.
+     */
+    public function viewportHasTouch(bool $hasTouch)
+    {
+        $this->put("viewport_has_touch", $hasTouch ? "true" : "false");
+
+        return $this;
+    }
+
+    /**
+     * Sets viewport orientation to landscape.
+     */
+    public function viewportLandscape(bool $landscape)
+    {
+        $this->put("viewport_landscape", $landscape ? "true" : "false");
+
+        return $this;
+    }
+
+    /**
+     * Sets image dimensions.
+     */
+    public function imageSize(int $width = null, int $height = null)
+    {
+        if ($width !== null) {
+            $this->put("image_width", (string) $width);
+        }
+        if ($height !== null) {
+            $this->put("image_height", (string) $height);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Enables dark mode emulation.
+     */
+    public function darkMode(bool $enabled)
+    {
+        $this->put("dark_mode", $enabled ? "true" : "false");
+
+        return $this;
+    }
+
+    /**
+     * Enables reduced motion emulation.
+     */
+    public function reducedMotion(bool $enabled)
+    {
+        $this->put("reduced_motion", $enabled ? "true" : "false");
+
+        return $this;
+    }
+
+    /**
+     * Sets media type emulation.
+     */
+    public function mediaType(string $type)
+    {
+        $this->put("media_type", $type);
+
+        return $this;
+    }
+
+    /**
+     * Sets scripts wait until condition.
+     */
+    public function scriptsWaitUntil(string $condition)
+    {
+        $this->put("scripts_wait_until", $condition);
+
+        return $this;
+    }
+
+    /**
+     * Sets click selector and error handling.
+     */
+    public function click(string $selector, bool $errorOnNotFound = false)
+    {
+        $this->put("click", $selector);
+        if ($errorOnNotFound) {
+            $this->put("error_on_click_selector_not_found", "true");
+        }
+
+        return $this;
+    }
+
+    /**
+     * Enables blocking banners by heuristics.
+     */
+    public function blockBannersByHeuristics(bool $block)
+    {
+        $this->put("block_banners_by_heuristics", $block ? "true" : "false");
+
+        return $this;
+    }
+
+    /**
+     * Enables blocking chat widgets.
+     */
+    public function blockChats(bool $block)
+    {
+        $this->put("block_chats", $block ? "true" : "false");
+
+        return $this;
+    }
+
+    /**
+     * Sets navigation timeout.
+     */
+    public function navigationTimeout(int $timeout)
+    {
+        $this->put("navigation_timeout", (string) $timeout);
+
+        return $this;
+    }
+
+    /**
+     * Sets wait for selector options.
+     */
+    public function waitForSelector(string $selector, string $algorithm = null)
+    {
+        $this->put("wait_for_selector", $selector);
+        if ($algorithm !== null) {
+            $this->put("wait_for_selector_algorithm", $algorithm);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Sets wait until condition.
+     */
+    public function waitUntil(string $condition)
+    {
+        $this->put("wait_until", $condition);
+
+        return $this;
+    }
+
+    /**
+     * Enables storing screenshot.
+     */
+    public function store(bool $store)
+    {
+        $this->put("store", $store ? "true" : "false");
+
+        return $this;
+    }
+
+    /**
+     * Sets storage options.
+     */
+    public function storage(
+        string $path = null,
+        string $endpoint = null,
+        string $accessKeyId = null,
+        string $secretAccessKey = null,
+        string $bucket = null,
+        string $class = null,
+        string $acl = null,
+        bool $returnLocation = false
+    ) {
+        if ($path !== null) {
+            $this->put("storage_path", $path);
+        }
+        if ($endpoint !== null) {
+            $this->put("storage_endpoint", $endpoint);
+        }
+        if ($accessKeyId !== null) {
+            $this->put("storage_access_key_id", $accessKeyId);
+        }
+        if ($secretAccessKey !== null) {
+            $this->put("storage_secret_access_key", $secretAccessKey);
+        }
+        if ($bucket !== null) {
+            $this->put("storage_bucket", $bucket);
+        }
+        if ($class !== null) {
+            $this->put("storage_class", $class);
+        }
+        if ($acl !== null) {
+            $this->put("storage_acl", $acl);
+        }
+        if ($returnLocation) {
+            $this->put("storage_return_location", "true");
+        }
+
+        return $this;
+    }
+
+    /**
+     * Enables metadata collection.
+     */
+    public function metadata(
+        bool $imageSize = false,
+        bool $fonts = false,
+        bool $icon = false,
+        bool $openGraph = false,
+        bool $pageTitle = false,
+        bool $content = false,
+        bool $httpResponseStatusCode = false,
+        bool $httpResponseHeaders = false
+    ) {
+        if ($imageSize) {
+            $this->put("metadata_image_size", "true");
+        }
+        if ($fonts) {
+            $this->put("metadata_fonts", "true");
+        }
+        if ($icon) {
+            $this->put("metadata_icon", "true");
+        }
+        if ($openGraph) {
+            $this->put("metadata_open_graph", "true");
+        }
+        if ($pageTitle) {
+            $this->put("metadata_page_title", "true");
+        }
+        if ($content) {
+            $this->put("metadata_content", "true");
+        }
+        if ($httpResponseStatusCode) {
+            $this->put("metadata_http_response_status_code", "true");
+        }
+        if ($httpResponseHeaders) {
+            $this->put("metadata_http_response_headers", "true");
+        }
+
+        return $this;
+    }
+
+    /**
+     * Enables async processing.
+     */
+    public function async(bool $async)
+    {
+        $this->put("async", $async ? "true" : "false");
+
+        return $this;
+    }
+
+    /**
+     * Sets webhook options.
+     */
+    public function webhook(string $url, bool $sign = true)
+    {
+        $this->put("webhook_url", $url);
+        $this->put("webhook_sign", $sign ? "true" : "false");
+
+        return $this;
+    }
+
+    /**
+     * Sets fail if content contains condition.
+     */
+    public function failIfContentContains(string ...$content)
+    {
+        $this->put("fail_if_content_contains", ...$content);
+
+        return $this;
+    }
+
+    /**
+     * Sets fail if GPU rendering fails condition.
+     */
+    public function failIfGpuRenderingFails(bool $fail)
+    {
+        $this->put("fail_if_gpu_rendering_fails", $fail ? "true" : "false");
+
+        return $this;
+    }
+
+    /**
+     * Enables bypassing Content Security Policy.
+     */
+    public function bypassCsp(bool $bypass)
+    {
+        $this->put("bypass_csp", $bypass ? "true" : "false");
 
         return $this;
     }

@@ -17,7 +17,8 @@ class Client
     public function __construct(string $accessKey, string $secretKey)
     {
         $this->httpClient = new HttpClient([
-            'timeout'  => 30,
+            // max possible timeout for the API requests
+            'timeout'  => 600,
             'allow_redirects' => true,
         ]);
 
@@ -43,7 +44,7 @@ class Client
      * Returns the image stream.
      */
     public function take(TakeOptions $options): string
-    {
+    {        
         $response = $this->httpClient->get($this->generateTakeUrl($options), ['stream' => true]);
 
         return $response->getBody()->getContents();
