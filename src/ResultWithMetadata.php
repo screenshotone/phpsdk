@@ -13,8 +13,8 @@ class ImageSize
 
 class Content
 {
-    public final string $url;
-    public final ?DateTime $expires = null;
+    public string $url;
+    public ?DateTime $expires = null;
 
     public function __construct(string $url, DateTime $expires)
     {
@@ -38,7 +38,7 @@ class HTTPResponse
 
 class Cache
 {
-    public final string $url;
+    public string $url;
 
     public function __construct(string $url)
     {
@@ -48,8 +48,8 @@ class Cache
 
 class Icon
 {
-    public final string $url;
-    public final string $type;
+    public string $url;
+    public string $type;
 
     public function __construct(string $url, string $type)
     {
@@ -74,16 +74,16 @@ class Font
 
 class ResultWithMetadata
 {
-    public final ?Cache $cache = null;
-    public final ?string $screenshot = null;
-    public final ?ImageSize $imageSize = null;
+    public ?Cache $cache = null;
+    public ?string $screenshot = null;
+    public ?ImageSize $imageSize = null;
     /**
      * @var Font[]|null
      */
-    public final ?array $fonts = null;
-    public final ?Icon $icon = null;
-    public final ?OpenGraph $openGraph = null;
-    public final ?string $pageTitle = null;
-    public final ?Content $content = null;
-    public final ?HTTPResponse $httpResponse = null;
+    public ?array $fonts = null;
+    public ?Icon $icon = null;
+    public ?OpenGraph $openGraph = null;
+    public ?string $pageTitle = null;
+    public ?Content $content = null;
+    public ?HTTPResponse $httpResponse = null;
 }
