@@ -510,7 +510,7 @@ class TakeOptions
     /**
      * Sets full page scroll parameters.
      */
-    public function fullPageScroll(bool $scroll, int $delay = null, int $scrollBy = null)
+    public function fullPageScroll(bool $scroll, ?int $delay = null, ?int $scrollBy = null)
     {
         $this->put("full_page_scroll", $scroll ? "true" : "false");
         if ($delay !== null) {
@@ -586,7 +586,7 @@ class TakeOptions
     /**
      * Sets image dimensions.
      */
-    public function imageSize(int $width = null, int $height = null)
+    public function imageSize(?int $width = null, ?int $height = null)
     {
         if ($width !== null) {
             $this->put("image_width", (string) $width);
@@ -684,7 +684,7 @@ class TakeOptions
     /**
      * Sets wait for selector options.
      */
-    public function waitForSelector(string $selector, string $algorithm = null)
+    public function waitForSelector(string $selector, ?string $algorithm = null)
     {
         $this->put("wait_for_selector", $selector);
         if ($algorithm !== null) {
@@ -718,13 +718,13 @@ class TakeOptions
      * Sets storage options.
      */
     public function storage(
-        string $path = null,
-        string $endpoint = null,
-        string $accessKeyId = null,
-        string $secretAccessKey = null,
-        string $bucket = null,
-        string $class = null,
-        string $acl = null,
+        ?string $path = null,
+        ?string $endpoint = null,
+        ?string $accessKeyId = null,
+        ?string $secretAccessKey = null,
+        ?string $bucket = null,
+        ?string $class = null,
+        ?string $acl = null,
         bool $returnLocation = false
     ) {
         if ($path !== null) {
@@ -751,6 +751,13 @@ class TakeOptions
         if ($returnLocation) {
             $this->put("storage_return_location", "true");
         }
+
+        return $this;
+    }
+
+    public function responseType(string $type)
+    {
+        $this->put("response_type", $type);
 
         return $this;
     }
