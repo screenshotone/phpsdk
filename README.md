@@ -1,10 +1,11 @@
 # phpsdk
 
 [![Build](https://github.com/screenshotone/phpsdk/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/screenshotone/phpsdk/actions/workflows/build.yml)
+[![Total Downloads](https://img.shields.io/packagist/dt/screenshotone/sdk.svg?style=flat-square)](https://packagist.org/packages/screenshotone/sdk)
 
-An official [Screenshot API](https://screenshotone.com/) client for PHP. 
+An official [Screenshot API](https://screenshotone.com/) client for PHP.
 
-It takes minutes to start taking screenshots. Just [sign up](https://screenshotone.com/) to get access and secret keys, import the client, and you are ready to go. 
+It takes minutes to start taking screenshots. Just [sign up](https://screenshotone.com/) to get access and secret keys, import the client, and you are ready to go.
 
 The SDK client is synchronized with the latest [screenshot API options](https://screenshotone.com/docs/options/).
 
@@ -16,11 +17,12 @@ composer require screenshotone/sdk:^1.0
 
 ## Usage
 
-Generate a screenshot URL without executing the request. Or download the screenshot. It is up to you: 
-```php
-<?php 
+Generate a screenshot URL without executing the request. Or download the screenshot. It is up to you:
 
-// If you don't use Composer in your project, please, read https://getcomposer.org/doc/01-basic-usage.md#autoloading. 
+```php
+<?php
+
+// If you don't use Composer in your project, please, read https://getcomposer.org/doc/01-basic-usage.md#autoloading.
 // You need the Composer autoloader to use the API SDK.
 
 // ...
@@ -45,18 +47,20 @@ $image = $client->take($options);
 file_put_contents('example.png', $image);
 ```
 
-## Tests 
+## Tests
 
-Run: 
+Run:
+
 ```
 $ composer run-script tests
 ```
 
-Or: 
+Or:
+
 ```
 $ vendor/bin/phpunit
 ```
 
-## License 
+## License
 
 `screenshotone/phpsdk` is released under [the MIT license](LICENSE).
