@@ -3,6 +3,7 @@
 namespace ScreenshotOne\Sdk;
 
 use GuzzleHttp\Client as HttpClient;
+use GuzzleHttp\Exception\GuzzleException;
 use ScreenshotOne\Sdk\ResultWithMetadata;
 use ScreenshotOne\Sdk\ImageSize;
 use ScreenshotOne\Sdk\OpenGraph;
@@ -16,7 +17,8 @@ class Client
     private const API_BASE_URI = 'https://api.screenshotone.com';
 
     private HttpClient $httpClient;
-    private $accessKey, $secretKey;
+    private string $accessKey;
+    private string $secretKey;
 
     public function __construct(string $accessKey, string $secretKey)
     {
@@ -44,6 +46,9 @@ class Client
 
     /**
      * Take screenshot and return a result with the metadata if requested via options.
+     *
+     * @throws GuzzleException if the http request fail.
+     * @throws \Exception if the status code is not a 2xx.
      */
     public function takeWithMetadata(TakeOptions $options): ResultWithMetadata
     {
@@ -206,8 +211,11 @@ class Client
 
     /**
      * Take screenshot and return an image.
-     * 
+     *
      * Returns the image stream.
+     *
+     * @throws GuzzleException if the http request fail.
+     * @throws \RuntimeException if unable to read or an error occurs while reading the stream.
      */
     public function take(TakeOptions $options): string
     {
