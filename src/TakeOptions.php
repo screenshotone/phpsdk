@@ -41,6 +41,8 @@ class TakeOptions
 
     /**
      * Selector is a CSS-like selector of the element to take a screenshot of.
+     *
+     * @return $this
      */
     public function selector(string $selector)
     {
@@ -52,9 +54,11 @@ class TakeOptions
 
     /**
      * hideSelectors method allows hiding elements before taking a screenshot.
-     * 
-     * All elements that match each selector will be hidden by setting the `display` style 
+     *
+     * All elements that match each selector will be hidden by setting the `display` style
      * property to `none !important`.
+     *
+     * @return $this
      */
     public function hideSelectors(string ...$selectors)
     {
@@ -65,6 +69,8 @@ class TakeOptions
 
     /**
      * errorOnSelectorNotFound determines the behavior of what to do when selector is not found.
+     *
+     * @return $this
      */
     public function errorOnSelectorNotFound(bool $errorOn)
     {
@@ -74,7 +80,9 @@ class TakeOptions
     }
 
     /**
-     * You can use data center proxies provided by ScreenshotOne to take screenshots from different countries. 
+     * You can use data center proxies provided by ScreenshotOne to take screenshots from different countries.
+     *
+     * @return $this
      */
     public function ipCountryCode(string $ipCountryCode)
     {
@@ -85,6 +93,8 @@ class TakeOptions
 
     /**
      * Styles specifies custom CSS styles for the page.
+     *
+     * @return $this
      */
     public function styles(string $styles)
     {
@@ -95,6 +105,8 @@ class TakeOptions
 
     /**
      * Scripts specifies custom scripts for the page.
+     *
+     * @return $this
      */
     public function scripts(string $scripts)
     {
@@ -105,6 +117,8 @@ class TakeOptions
 
     /**
      * Renders the full page.
+     *
+     * @return $this
      */
     public function fullPage(bool $fullPage)
     {
@@ -115,6 +129,8 @@ class TakeOptions
 
     /**
      * Sets response format, one of: "png", "jpeg", "webp" or "jpg".
+     *
+     * @return $this
      */
     public function format(string $format)
     {
@@ -125,6 +141,8 @@ class TakeOptions
 
     /**
      * Renders image with the specified quality. Available for the next formats: "jpeg" ("jpg"), "webp".
+     *
+     * @return $this
      */
     public function imageQuality(int $imageQuality)
     {
@@ -136,6 +154,8 @@ class TakeOptions
     /**
      * Renders a transparent background for the image. Works only if the site has not defined background color.
      * Available for the following response formats: "png", "webp".
+     *
+     * @return $this
      */
     public function omitBackground(bool $omitBackground)
     {
@@ -146,6 +166,8 @@ class TakeOptions
 
     /**
      * Sets the width of the browser viewport (pixels).
+     *
+     * @return $this
      */
     public function viewportWidth(int $viewportWidth)
     {
@@ -156,6 +178,8 @@ class TakeOptions
 
     /**
      * Sets the height of the browser viewport (pixels).
+     *
+     * @return $this
      */
     public function viewportHeight(int $viewportHeight)
     {
@@ -166,6 +190,8 @@ class TakeOptions
 
     /**
      * Sets the device scale factor. Acceptable value is one of: 1, 2 or 3.
+     *
+     * @return $this
      */
     public function deviceScaleFactor(int $deviceScaleFactor)
     {
@@ -177,6 +203,8 @@ class TakeOptions
     /**
      * Sets geolocation latitude for the request.
      * Both latitude and longitude are required if one of them is set.
+     *
+     * @return $this
      */
     public function geolocationLatitude(float $latitude)
     {
@@ -187,6 +215,8 @@ class TakeOptions
 
     /**
      * Sets geolocation longitude for the request. Both latitude and longitude are required if one of them is set.
+     *
+     * @return $this
      */
     public function geolocationLongitude(float $longitude)
     {
@@ -197,6 +227,8 @@ class TakeOptions
 
     /**
      * Sets the geolocation accuracy in meters.
+     *
+     * @return $this
      */
     public function geolocationAccuracy(int $accuracy)
     {
@@ -207,6 +239,8 @@ class TakeOptions
 
     /**
      * Blocks ads.
+     *
+     * @return $this
      */
     public function blockAds(bool $blockAds)
     {
@@ -217,6 +251,8 @@ class TakeOptions
 
     /**
      * Blocks cookie banners.
+     *
+     * @return $this
      */
     public function blockCookieBanners(bool $blockCookieBanners)
     {
@@ -226,6 +262,8 @@ class TakeOptions
 
     /**
      * Blocks trackers.
+     *
+     * @return $this
      */
     public function blockTrackers(bool $blockTrackers)
     {
@@ -236,6 +274,8 @@ class TakeOptions
 
     /**
      * Blocks requests by specifying URL, domain, or even a simple pattern.
+     *
+     * @return $this
      */
     public function blockRequests(string ...$blockRequests)
     {
@@ -248,6 +288,8 @@ class TakeOptions
     /**
      * Blocks loading resources by type. Available resource types are: "document", "stylesheet", "image", "media",
      * "font", "script", "texttrack", "xhr", "fetch", "eventsource", "websocket", "manifest", "other".
+     *
+     * @return $this
      */
     public function blockResources(string ...$blockResources)
     {
@@ -258,6 +300,8 @@ class TakeOptions
 
     /**
      * Enables caching.
+     *
+     * @return $this
      */
     public function cache(bool $cache)
     {
@@ -268,6 +312,8 @@ class TakeOptions
 
     /**
      * Sets cache TTL.
+     *
+     * @return $this
      */
     public function cacheTtl(int $cacheTtl)
     {
@@ -278,6 +324,8 @@ class TakeOptions
 
     /**
      * Sets cache key.
+     *
+     * @return $this
      */
     public function cacheKey(string $cacheKey)
     {
@@ -288,6 +336,8 @@ class TakeOptions
 
     /**
      * Sets a user agent for the request.
+     *
+     * @return $this
      */
     public function userAgent(string $userAgent)
     {
@@ -298,6 +348,8 @@ class TakeOptions
 
     /**
      * Sets an authorization header for the request.
+     *
+     * @return $this
      */
     public function authorization(string $authorization)
     {
@@ -308,6 +360,8 @@ class TakeOptions
 
     /**
      * Set cookies for the request.
+     *
+     * @return $this
      */
     public function cookies(string ...$cookies)
     {
@@ -318,6 +372,8 @@ class TakeOptions
 
     /**
      * Sets extra headers for the request.
+     *
+     * @return $this
      */
     public function headers(string ...$headers)
     {
@@ -331,6 +387,8 @@ class TakeOptions
      * Available time zones are: "America/Santiago", "Asia/Shanghai", "Europe/Berlin", "America/Guayaquil",
      * "Europe/Madrid", "Pacific/Majuro", "Asia/Kuala_Lumpur", "Pacific/Auckland", "Europe/Lisbon", "Europe/Kiev",
      * "Asia/Tashkent", "Europe/London".
+     *
+     * @return $this
      */
     public function timeZone(string $timeZone)
     {
@@ -341,6 +399,8 @@ class TakeOptions
 
     /**
      * Sets delay.
+     *
+     * @return $this
      */
     public function delay(int $delay)
     {
@@ -351,6 +411,8 @@ class TakeOptions
 
     /**
      * Sets timeout.
+     *
+     * @return $this
      */
     public function timeout(int $timeout)
     {
@@ -363,9 +425,11 @@ class TakeOptions
      * When the site responds within the range of 200-299 status code, 
      * you can ignore errors and take a screenshot of the error page anyway. 
      * To do that, set the option `ignore_host_errors` to true. It is false by default.
-     * 
-     * It is helpful when you want to create a gallery of error pages or, 
+     *
+     * It is helpful when you want to create a gallery of error pages or,
      * for some reason, you need to render error pages.
+     *
+     * @return $this
      */
     public function ignoreHostErrors(bool $ignoreHostErrors)
     {
@@ -376,6 +440,8 @@ class TakeOptions
 
     /**
      * Enables scrolling element into view before taking a screenshot.
+     *
+     * @return $this
      */
     public function selectorScrollIntoView(bool $scroll)
     {
@@ -386,6 +452,8 @@ class TakeOptions
 
     /**
      * Enables capturing content beyond viewport.
+     *
+     * @return $this
      */
     public function captureBeyondViewport(bool $capture)
     {
@@ -396,6 +464,8 @@ class TakeOptions
 
     /**
      * Scrolls element into view before taking a screenshot.
+     *
+     * @return $this
      */
     public function scrollIntoView(string $selector)
     {
@@ -406,6 +476,8 @@ class TakeOptions
 
     /**
      * Adjusts scroll position by pixels.
+     *
+     * @return $this
      */
     public function scrollIntoViewAdjustTop(int $pixels)
     {
@@ -416,6 +488,8 @@ class TakeOptions
 
     /**
      * Requests GPU rendering.
+     *
+     * @return $this
      */
     public function requestGpuRendering(bool $request)
     {
@@ -426,6 +500,8 @@ class TakeOptions
 
     /**
      * Sets PDF print background.
+     *
+     * @return $this
      */
     public function pdfPrintBackground(bool $print)
     {
@@ -436,6 +512,8 @@ class TakeOptions
 
     /**
      * Fits PDF to one page.
+     *
+     * @return $this
      */
     public function pdfFitOnePage(bool $fit)
     {
@@ -446,6 +524,8 @@ class TakeOptions
 
     /**
      * Sets PDF orientation to landscape.
+     *
+     * @return $this
      */
     public function pdfLandscape(bool $landscape)
     {
@@ -456,6 +536,8 @@ class TakeOptions
 
     /**
      * Sets PDF paper format.
+     *
+     * @return $this
      */
     public function pdfPaperFormat(string $format)
     {
@@ -466,6 +548,8 @@ class TakeOptions
 
     /**
      * Sets OpenAI API key for vision integration.
+     *
+     * @return $this
      */
     public function openaiApiKey(string $key)
     {
@@ -476,6 +560,8 @@ class TakeOptions
 
     /**
      * Sets vision prompt for OpenAI integration.
+     *
+     * @return $this
      */
     public function visionPrompt(string $prompt)
     {
@@ -486,6 +572,8 @@ class TakeOptions
 
     /**
      * Sets maximum tokens for OpenAI vision response.
+     *
+     * @return $this
      */
     public function visionMaxTokens(int $tokens)
     {
@@ -496,6 +584,8 @@ class TakeOptions
 
     /**
      * Sets clip coordinates and dimensions.
+     *
+     * @return $this
      */
     public function clip(int $x, int $y, int $width, int $height)
     {
@@ -509,6 +599,8 @@ class TakeOptions
 
     /**
      * Sets full page scroll parameters.
+     *
+     * @return $this
      */
     public function fullPageScroll(bool $scroll, ?int $delay = null, ?int $scrollBy = null)
     {
@@ -525,6 +617,8 @@ class TakeOptions
 
     /**
      * Sets maximum height for full page screenshot.
+     *
+     * @return $this
      */
     public function fullPageMaxHeight(int $height)
     {
@@ -535,6 +629,8 @@ class TakeOptions
 
     /**
      * Sets full page algorithm.
+     *
+     * @return $this
      */
     public function fullPageAlgorithm(string $algorithm)
     {
@@ -545,6 +641,8 @@ class TakeOptions
 
     /**
      * Sets viewport device preset.
+     *
+     * @return $this
      */
     public function viewportDevice(string $device)
     {
@@ -555,6 +653,8 @@ class TakeOptions
 
     /**
      * Sets viewport mobile mode.
+     *
+     * @return $this
      */
     public function viewportMobile(bool $mobile)
     {
@@ -565,6 +665,8 @@ class TakeOptions
 
     /**
      * Sets viewport touch support.
+     *
+     * @return $this
      */
     public function viewportHasTouch(bool $hasTouch)
     {
@@ -575,6 +677,8 @@ class TakeOptions
 
     /**
      * Sets viewport orientation to landscape.
+     *
+     * @return $this
      */
     public function viewportLandscape(bool $landscape)
     {
@@ -585,6 +689,8 @@ class TakeOptions
 
     /**
      * Sets image dimensions.
+     *
+     * @return $this
      */
     public function imageSize(?int $width = null, ?int $height = null)
     {
@@ -600,6 +706,8 @@ class TakeOptions
 
     /**
      * Enables dark mode emulation.
+     *
+     * @return $this
      */
     public function darkMode(bool $enabled)
     {
@@ -610,6 +718,8 @@ class TakeOptions
 
     /**
      * Enables reduced motion emulation.
+     *
+     * @return $this
      */
     public function reducedMotion(bool $enabled)
     {
@@ -620,6 +730,8 @@ class TakeOptions
 
     /**
      * Sets media type emulation.
+     *
+     * @return $this
      */
     public function mediaType(string $type)
     {
@@ -630,6 +742,8 @@ class TakeOptions
 
     /**
      * Sets scripts wait until condition.
+     *
+     * @return $this
      */
     public function scriptsWaitUntil(string $condition)
     {
@@ -640,6 +754,8 @@ class TakeOptions
 
     /**
      * Sets click selector and error handling.
+     *
+     * @return $this
      */
     public function click(string $selector, bool $errorOnNotFound = false)
     {
@@ -653,6 +769,8 @@ class TakeOptions
 
     /**
      * Enables blocking banners by heuristics.
+     *
+     * @return $this
      */
     public function blockBannersByHeuristics(bool $block)
     {
@@ -663,6 +781,8 @@ class TakeOptions
 
     /**
      * Enables blocking chat widgets.
+     *
+     * @return $this
      */
     public function blockChats(bool $block)
     {
@@ -673,6 +793,8 @@ class TakeOptions
 
     /**
      * Sets navigation timeout.
+     *
+     * @return $this
      */
     public function navigationTimeout(int $timeout)
     {
@@ -683,6 +805,8 @@ class TakeOptions
 
     /**
      * Sets wait for selector options.
+     *
+     * @return $this
      */
     public function waitForSelector(string $selector, ?string $algorithm = null)
     {
@@ -696,6 +820,8 @@ class TakeOptions
 
     /**
      * Sets wait until condition.
+     *
+     * @return $this
      */
     public function waitUntil(string $condition)
     {
@@ -706,6 +832,8 @@ class TakeOptions
 
     /**
      * Enables storing screenshot.
+     *
+     * @return $this
      */
     public function store(bool $store)
     {
@@ -716,6 +844,8 @@ class TakeOptions
 
     /**
      * Sets storage options.
+     *
+     * @return $this
      */
     public function storage(
         ?string $path = null,
@@ -755,6 +885,9 @@ class TakeOptions
         return $this;
     }
 
+    /**
+     * @return $this
+     */
     public function responseType(string $type)
     {
         $this->put("response_type", $type);
@@ -764,6 +897,8 @@ class TakeOptions
 
     /**
      * Enables metadata collection.
+     *
+     * @return $this
      */
     public function metadata(
         bool $imageSize = false,
@@ -805,6 +940,8 @@ class TakeOptions
 
     /**
      * Enables async processing.
+     *
+     * @return $this
      */
     public function async(bool $async)
     {
@@ -815,6 +952,8 @@ class TakeOptions
 
     /**
      * Sets webhook options.
+     *
+     * @return $this
      */
     public function webhook(string $url, bool $sign = true)
     {
@@ -826,6 +965,8 @@ class TakeOptions
 
     /**
      * Sets fail if content contains condition.
+     *
+     * @return $this
      */
     public function failIfContentContains(string ...$content)
     {
@@ -836,6 +977,8 @@ class TakeOptions
 
     /**
      * Sets fail if GPU rendering fails condition.
+     *
+     * @return $this
      */
     public function failIfGpuRenderingFails(bool $fail)
     {
@@ -846,6 +989,8 @@ class TakeOptions
 
     /**
      * Enables bypassing Content Security Policy.
+     *
+     * @return $this
      */
     public function bypassCsp(bool $bypass)
     {
