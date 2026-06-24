@@ -61,6 +61,10 @@ Or:
 $ vendor/bin/phpunit
 ```
 
+## Contributing 
+
+[Check out our contributing guide](CONTRIBUTING.md).
+
 ## License
 
 `screenshotone/phpsdk` is released under [the MIT license](LICENSE).
