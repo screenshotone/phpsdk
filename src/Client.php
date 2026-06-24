@@ -21,11 +21,11 @@ class Client
     private string $secretKey;
 
     /**
-     * @param array<string, mixed> $options
+     * @param array<string, mixed> $httpClientOptions
      */
-    public function __construct(string $accessKey, string $secretKey, array $options = [])
+    public function __construct(string $accessKey, string $secretKey, array $httpClientOptions = [])
     {
-        $this->httpClient = new HttpClient($options + [
+        $this->httpClient = new HttpClient($httpClientOptions + [
             // max possible timeout for the API requests
             'timeout'  => 600,
             'allow_redirects' => true,
